@@ -8,7 +8,7 @@ subtitle: ''
 description: '个人的生活感悟'
 keywords:
 author: chen
-language: zh-cn
+language: zh-CN
 timezone: ''
 
 # URL
@@ -97,7 +97,7 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: NexT
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
