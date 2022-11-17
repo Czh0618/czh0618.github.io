@@ -2,6 +2,7 @@
 title: v2ray
 date: 2022-11-14 11:36:05
 tags: [bridge,梯子]
+categories: v2Ray
 ---
 
 ### v2ray使用
