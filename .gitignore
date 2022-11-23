@@ -10,4 +10,5 @@ node_modules/
 coverage/
 .deploy_git/
 public/
+.db.json
 
