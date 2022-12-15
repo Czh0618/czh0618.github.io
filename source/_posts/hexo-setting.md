@@ -1,6 +1,5 @@
 ---
-layout: drafts
-title: hexo setting
+title: Hexo setting
 tags: hexo
 comments: true
 toc: true

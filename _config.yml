@@ -13,7 +13,7 @@ timezone: 'Asia/Shanghai'
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: http://czh06.tk
+url: https://czh1106.github.io/
 permalink: :title/
 permalink_defaults:
 pretty_urls:
@@ -134,7 +134,7 @@ recommended_posts:
   fixedNumber: false
   autoDisplay: true #自动在文章底部显示推荐文章
   excludePattern: []
-  titleHtml: <h1>猜你喜欢<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h1> #自定义标题
+  titleHtml: <h1>猜你喜欢<span style="font-size:0.45em; color:gray"></span></h1> #自定义标题
 
 sitemap:
   path: sitemap.xml
