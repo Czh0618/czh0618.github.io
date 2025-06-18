@@ -3,11 +3,11 @@
   <title>耳东华的技术博客</title>
   
   <subtitle>分享技术，记录成长</subtitle>
-  <link href="https://czh1106.github.io/atom.xml" rel="self"/>
+  <link href="https://czh0618.github.io/atom.xml" rel="self"/>
   
-  <link href="https://czh1106.github.io/"/>
+  <link href="https://czh0618.github.io/"/>
   <updated>2025-06-18T06:10:16.561Z</updated>
-  <id>https://czh1106.github.io/</id>
+  <id>https://czh0618.github.io/</id>
   
   <author>
     <name>耳东华</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Java 开发中的性能优化技巧</title>
-    <link href="https://czh1106.github.io/2025/06/16/java-performance-optimization/"/>
-    <id>https://czh1106.github.io/2025/06/16/java-performance-optimization/</id>
+    <link href="https://czh0618.github.io/2025/06/16/java-performance-optimization/"/>
+    <id>https://czh0618.github.io/2025/06/16/java-performance-optimization/</id>
     <published>2025-06-16T02:00:00.000Z</published>
     <updated>2025-06-18T06:10:16.561Z</updated>
     
@@ -28,21 +28,21 @@
     
     
     
-    <category term="技术分享" scheme="https://czh1106.github.io/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/"/>
+    <category term="技术分享" scheme="https://czh0618.github.io/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/"/>
     
     
-    <category term="Java" scheme="https://czh1106.github.io/tags/Java/"/>
+    <category term="Java" scheme="https://czh0618.github.io/tags/Java/"/>
     
-    <category term="性能优化" scheme="https://czh1106.github.io/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
+    <category term="性能优化" scheme="https://czh0618.github.io/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
     
-    <category term="编程技巧" scheme="https://czh1106.github.io/tags/%E7%BC%96%E7%A8%8B%E6%8A%80%E5%B7%A7/"/>
+    <category term="编程技巧" scheme="https://czh0618.github.io/tags/%E7%BC%96%E7%A8%8B%E6%8A%80%E5%B7%A7/"/>
     
   </entry>
   
   <entry>
     <title>性能指标详解</title>
-    <link href="https://czh1106.github.io/2024/04/04/performance-index/"/>
-    <id>https://czh1106.github.io/2024/04/04/performance-index/</id>
+    <link href="https://czh0618.github.io/2024/04/04/performance-index/"/>
+    <id>https://czh0618.github.io/2024/04/04/performance-index/</id>
     <published>2024-04-04T12:22:40.000Z</published>
     <updated>2025-06-18T04:11:47.000Z</updated>
     
@@ -51,21 +51,21 @@
     
     
     
-    <category term="技术分享" scheme="https://czh1106.github.io/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/"/>
+    <category term="技术分享" scheme="https://czh0618.github.io/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/"/>
     
     
-    <category term="性能" scheme="https://czh1106.github.io/tags/%E6%80%A7%E8%83%BD/"/>
+    <category term="性能" scheme="https://czh0618.github.io/tags/%E6%80%A7%E8%83%BD/"/>
     
-    <category term="指标" scheme="https://czh1106.github.io/tags/%E6%8C%87%E6%A0%87/"/>
+    <category term="指标" scheme="https://czh0618.github.io/tags/%E6%8C%87%E6%A0%87/"/>
     
-    <category term="性能测试" scheme="https://czh1106.github.io/tags/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/"/>
+    <category term="性能测试" scheme="https://czh0618.github.io/tags/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/"/>
     
   </entry>
   
   <entry>
     <title>IntelliJ IDEA 插件推荐指南</title>
-    <link href="https://czh1106.github.io/2023/05/16/ideaPlugin/"/>
-    <id>https://czh1106.github.io/2023/05/16/ideaPlugin/</id>
+    <link href="https://czh0618.github.io/2023/05/16/ideaPlugin/"/>
+    <id>https://czh0618.github.io/2023/05/16/ideaPlugin/</id>
     <published>2023-05-16T08:59:46.000Z</published>
     <updated>2025-06-18T02:00:00.000Z</updated>
     
@@ -74,23 +74,23 @@
     
     
     
-    <category term="工具" scheme="https://czh1106.github.io/categories/%E5%B7%A5%E5%85%B7/"/>
+    <category term="工具" scheme="https://czh0618.github.io/categories/%E5%B7%A5%E5%85%B7/"/>
     
     
-    <category term="idea" scheme="https://czh1106.github.io/tags/idea/"/>
+    <category term="idea" scheme="https://czh0618.github.io/tags/idea/"/>
     
-    <category term="plugin" scheme="https://czh1106.github.io/tags/plugin/"/>
+    <category term="plugin" scheme="https://czh0618.github.io/tags/plugin/"/>
     
-    <category term="工具推荐" scheme="https://czh1106.github.io/tags/%E5%B7%A5%E5%85%B7%E6%8E%A8%E8%8D%90/"/>
+    <category term="工具推荐" scheme="https://czh0618.github.io/tags/%E5%B7%A5%E5%85%B7%E6%8E%A8%E8%8D%90/"/>
     
-    <category term="开发效率" scheme="https://czh1106.github.io/tags/%E5%BC%80%E5%8F%91%E6%95%88%E7%8E%87/"/>
+    <category term="开发效率" scheme="https://czh0618.github.io/tags/%E5%BC%80%E5%8F%91%E6%95%88%E7%8E%87/"/>
     
   </entry>
   
   <entry>
     <title>2023年度读书清单</title>
-    <link href="https://czh1106.github.io/2023/05/07/2023Book/"/>
-    <id>https://czh1106.github.io/2023/05/07/2023Book/</id>
+    <link href="https://czh0618.github.io/2023/05/07/2023Book/"/>
+    <id>https://czh0618.github.io/2023/05/07/2023Book/</id>
     <published>2023-05-07T07:27:12.000Z</published>
     <updated>2025-06-18T05:59:45.599Z</updated>
     
@@ -99,21 +99,21 @@
     
     
     
-    <category term="读书" scheme="https://czh1106.github.io/categories/%E8%AF%BB%E4%B9%A6/"/>
+    <category term="读书" scheme="https://czh0618.github.io/categories/%E8%AF%BB%E4%B9%A6/"/>
     
     
-    <category term="2023" scheme="https://czh1106.github.io/tags/2023/"/>
+    <category term="2023" scheme="https://czh0618.github.io/tags/2023/"/>
     
-    <category term="读书笔记" scheme="https://czh1106.github.io/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    <category term="读书笔记" scheme="https://czh0618.github.io/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
     
-    <category term="技术书籍" scheme="https://czh1106.github.io/tags/%E6%8A%80%E6%9C%AF%E4%B9%A6%E7%B1%8D/"/>
+    <category term="技术书籍" scheme="https://czh0618.github.io/tags/%E6%8A%80%E6%9C%AF%E4%B9%A6%E7%B1%8D/"/>
     
   </entry>
   
   <entry>
     <title>Hexo 博客搭建指南</title>
-    <link href="https://czh1106.github.io/2022/11/20/hexo-setting/"/>
-    <id>https://czh1106.github.io/2022/11/20/hexo-setting/</id>
+    <link href="https://czh0618.github.io/2022/11/20/hexo-setting/"/>
+    <id>https://czh0618.github.io/2022/11/20/hexo-setting/</id>
     <published>2022-11-20T08:30:01.000Z</published>
     <updated>2025-06-18T05:59:44.244Z</updated>
     
@@ -122,21 +122,21 @@
     
     
     
-    <category term="工具" scheme="https://czh1106.github.io/categories/%E5%B7%A5%E5%85%B7/"/>
+    <category term="工具" scheme="https://czh0618.github.io/categories/%E5%B7%A5%E5%85%B7/"/>
     
     
-    <category term="hexo" scheme="https://czh1106.github.io/tags/hexo/"/>
+    <category term="hexo" scheme="https://czh0618.github.io/tags/hexo/"/>
     
-    <category term="博客搭建" scheme="https://czh1106.github.io/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
+    <category term="博客搭建" scheme="https://czh0618.github.io/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
     
-    <category term="技术分享" scheme="https://czh1106.github.io/tags/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/"/>
+    <category term="技术分享" scheme="https://czh0618.github.io/tags/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/"/>
     
   </entry>
   
   <entry>
     <title>我的博客搭建之旅</title>
-    <link href="https://czh1106.github.io/2022/11/20/My-Blog-Journey/"/>
-    <id>https://czh1106.github.io/2022/11/20/My-Blog-Journey/</id>
+    <link href="https://czh0618.github.io/2022/11/20/My-Blog-Journey/"/>
+    <id>https://czh0618.github.io/2022/11/20/My-Blog-Journey/</id>
     <published>2022-11-20T07:16:43.000Z</published>
     <updated>2025-06-18T05:59:46.221Z</updated>
     
@@ -145,21 +145,21 @@
     
     
     
-    <category term="个人" scheme="https://czh1106.github.io/categories/%E4%B8%AA%E4%BA%BA/"/>
+    <category term="个人" scheme="https://czh0618.github.io/categories/%E4%B8%AA%E4%BA%BA/"/>
     
     
-    <category term="blog" scheme="https://czh1106.github.io/tags/blog/"/>
+    <category term="blog" scheme="https://czh0618.github.io/tags/blog/"/>
     
-    <category term="个人成长" scheme="https://czh1106.github.io/tags/%E4%B8%AA%E4%BA%BA%E6%88%90%E9%95%BF/"/>
+    <category term="个人成长" scheme="https://czh0618.github.io/tags/%E4%B8%AA%E4%BA%BA%E6%88%90%E9%95%BF/"/>
     
-    <category term="技术选型" scheme="https://czh1106.github.io/tags/%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8B/"/>
+    <category term="技术选型" scheme="https://czh0618.github.io/tags/%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8B/"/>
     
   </entry>
   
   <entry>
     <title>v2ray</title>
-    <link href="https://czh1106.github.io/2022/11/14/v2Ray/"/>
-    <id>https://czh1106.github.io/2022/11/14/v2Ray/</id>
+    <link href="https://czh0618.github.io/2022/11/14/v2Ray/"/>
+    <id>https://czh0618.github.io/2022/11/14/v2Ray/</id>
     <published>2022-11-14T03:36:05.000Z</published>
     <updated>2025-06-18T04:11:47.359Z</updated>
     
@@ -171,19 +171,19 @@ v2Ray（Project V）相对于Shadowsocks,支持更多协议 (Socks、HTTP、TLS�
     
     
     
-    <category term="v2Ray" scheme="https://czh1106.github.io/categories/v2Ray/"/>
+    <category term="v2Ray" scheme="https://czh0618.github.io/categories/v2Ray/"/>
     
     
-    <category term="bridge" scheme="https://czh1106.github.io/tags/bridge/"/>
+    <category term="bridge" scheme="https://czh0618.github.io/tags/bridge/"/>
     
-    <category term="梯子" scheme="https://czh1106.github.io/tags/%E6%A2%AF%E5%AD%90/"/>
+    <category term="梯子" scheme="https://czh0618.github.io/tags/%E6%A2%AF%E5%AD%90/"/>
     
   </entry>
   
   <entry>
     <title>My Book</title>
-    <link href="https://czh1106.github.io/2022/11/09/myBook/"/>
-    <id>https://czh1106.github.io/2022/11/09/myBook/</id>
+    <link href="https://czh0618.github.io/2022/11/09/myBook/"/>
+    <id>https://czh0618.github.io/2022/11/09/myBook/</id>
     <published>2022-11-09T07:40:23.000Z</published>
     <updated>2025-06-18T04:11:47.359Z</updated>
     
@@ -202,10 +202,10 @@ v2Ray（Project V）相对于Shadowsocks,支持更多协议 (Socks、HTTP、TLS�
     
     
     
-    <category term="读书" scheme="https://czh1106.github.io/categories/%E8%AF%BB%E4%B9%A6/"/>
+    <category term="读书" scheme="https://czh0618.github.io/categories/%E8%AF%BB%E4%B9%A6/"/>
     
     
-    <category term="2022" scheme="https://czh1106.github.io/tags/2022/"/>
+    <category term="2022" scheme="https://czh0618.github.io/tags/2022/"/>
     
   </entry>
   
