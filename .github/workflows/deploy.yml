@@ -18,8 +18,13 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4
       with:
-        submodules: true
+        submodules: recursive
         fetch-depth: 0
+        token: ${{ secrets.GITHUB_TOKEN }}
+        
+    - name: Update submodules
+      run: |
+        git submodule update --init --recursive --force
 
     - name: Setup Node.js
       uses: actions/setup-node@v4
