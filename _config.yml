@@ -3,19 +3,20 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 耳东华的分享
-subtitle: ''
-description: '个人的生活感悟'
-keywords:
+title: 耳东华的技术博客
+subtitle: '分享技术，记录成长'
+description: '专注于技术分享、工具推荐、读书笔记的个人博客，涵盖Java、前端、工具使用等技术内容'
+keywords: 技术博客,Java,前端,工具推荐,读书笔记,编程,开发
 author: 耳东华
 language: zh-CN
 timezone: 'Asia/Shanghai'
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: https://czh1106.github.io/
-permalink: :title/
+url: https://Czh0618.github.io/
+permalink: :year/:month/:day/:title/
 permalink_defaults:
+  lang: zh-CN
 pretty_urls:
   trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
   trailing_html: true # Set to false to remove trailing '.html' from permalinks
@@ -44,7 +45,7 @@ post_asset_folder: false
 relative_link: false
 future: true
 highlight:
-  enable: true
+  enable: false
   line_number: true
   auto_detect: false
   tab_replace: ''
@@ -113,7 +114,7 @@ theme: NexT
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: https://github.com/CZH1106/czh1106.github.io.git
+  repo: https://github.com/Czh0618/Czh0618.github.io.git
   branch: master
 
 symbols_count_time:
@@ -139,12 +140,22 @@ recommended_posts:
 sitemap:
   path: sitemap.xml
 
-prism_plugin:
-  mode: 'preprocess'    # realtime/preprocess
-  theme: 'default'
-  line_number: false    # default false
-  custom_css: 'path/to/your/custom.css'     # optional
+# RSS 订阅
+feed:
+  enable: true
+  type: atom
+  path: atom.xml
+  limit: 20
+  hub:
+  content:
+  content_limit: 140
+  content_limit_delim: ' '
+  order_by: -date
 
-search:
+# 搜索
+searchdb:
   path: search.xml
   field: post
+  content: true
+  format: html
+  limit: 10000

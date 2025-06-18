@@ -1,11 +1,15 @@
 ---
-title: My Blog Journey
-tags: blog
-categories: 个人
+title: 我的博客搭建之旅
+tags: 
+  - blog
+  - 个人成长
+  - 技术选型
+categories: 
+  - 个人
 comments: true
 toc: true
-top: true
 date: 2022-11-20 15:16:43
+description: 记录从萌生搭建博客想法到最终选择 Hexo 的完整过程，以及 WordPress 和 Hexo 的对比分析
 ---
 
 

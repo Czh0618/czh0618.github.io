@@ -1,11 +1,15 @@
 ---
-title: Hexo setting
-tags: hexo
+title: Hexo 博客搭建指南
+tags: 
+  - hexo
+  - 博客搭建
+  - 技术分享
 comments: true
 toc: true
-top: true
-categories: 个人
+categories: 
+  - 工具
 date: 2022-11-20 16:30:01
+description: 详细介绍 Hexo 博客的搭建过程，包括主题选择、评论系统、统计分析等功能配置
 ---
 
 

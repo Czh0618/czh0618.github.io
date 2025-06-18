@@ -1,45 +1,31 @@
 ---
-title: ideaPlugin
+title: IntelliJ IDEA 插件推荐指南
 comments: true
 toc: true
 top: true
 date: 2023-05-16 16:59:46
-tags: [idea,plugin]
-categories: 工具
+updated: 2025-06-18 10:00:00
+tags: 
+  - idea
+  - plugin
+  - 工具推荐
+  - 开发效率
+categories: 
+  - 工具
+description: 汇总常用的 IntelliJ IDEA 插件，提升开发效率的必备工具推荐
+keywords: IntelliJ IDEA, 插件, 开发工具, 效率提升, GitHub Copilot
 ---
 
 ### 下面主要是汇总一下自己使用的idea插件，这里只是罗列以及简介
 
+<!-- more -->
+
 #### AI
-
-- Bito
-
-```
-idea插件库里查找安装，安装完成邮箱注册，创建或者加入workspace就可以使用了，不需要魔法
-
-功能：
-    解释代码
-    生成注释
-    自定义内容等
-
-注意：
-    为了防止读取公司代码，就只是体验了一番
-```
-
-- ChatGPT
-
-```
-idea插件库搜索安装，需要魔法以及自己的gptKey
-
-功能：
-    支持api
-    支持内嵌网页版
-```
 
 - GitHub Copilot
 
 ```
-github的代码辅助工具，可以根据注释或上下文自动生成代码
+github的代码辅助工具，可以根据注释或上下文自动生成代码，目前支持了Agent代理模式，但是不太好用，目前还是主要使用Tab模式
 ```
 
 #### 工具
@@ -60,18 +46,6 @@ github的代码辅助工具，可以根据注释或上下文自动生成代码
 
 ```
 在 kebab-case、SNAKE_CASE、PascalCase、camelCase、snake_case 或 space case 之间轻松切换。请参阅编辑菜单或使用 ⇧ + ⌥ + U / Shift + Alt + U。允许禁用某些转换或在首选项中更改它们的顺序。
-```
-
-- GenerateAllSetter
-
-```
-一键调用一个对象的所有的set方法,get方法等
-```
-
-- GsonFormat-Plus
-
-```
-快速将JSON字符串转换为实体类。 基于 GsonFormat 二次开发，增强了插件本身的功能
 ```
 
 - jclasslib is a bytecode viewer
@@ -102,6 +76,18 @@ github的代码辅助工具，可以根据注释或上下文自动生成代码
 
 ```
 restFul接口查找
+```
+
+- Swith2Cursor
+
+```
+支持在cursor开发工具里打开当前的项目，从而使用Agent功能
+```
+
+- POJO to JSON
+  
+```
+将POJO转换成JSON，适合跟前端对接数据结构
 ```
 
 #### 学习

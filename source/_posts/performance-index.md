@@ -1,11 +1,17 @@
 ---
-title: performance-index
+title: 性能指标详解
 comments: true
 toc: true
-top: true
 date: 2024-04-04 20:22:40
-tags: [性能,指标]
-categories:
+updated: 2025-06-18 12:11:47
+tags: 
+  - 性能
+  - 指标
+  - 性能测试
+categories: 
+  - 技术分享
+description: 在开发测试网站时需要了解的性能指标，包括吞吐量、并发数、QPS、TPS等重要概念
+keywords: 性能指标, 吞吐量, QPS, TPS, 并发数, 性能测试
 ---
 
 ### 简述
