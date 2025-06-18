@@ -2,9 +2,9 @@ name: Deploy Hexo Blog
 
 on:
   push:
-    branches: [ hexo_20250618 ]
+    branches: [ hexo ]
   pull_request:
-    branches: [ hexo_20250618 ]
+    branches: [ hexo ]
 
 jobs:
   deploy:
