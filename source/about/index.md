@@ -20,10 +20,10 @@ comments: false
 - **Java** - 主要开发语言
 - **JavaScript** - 前端开发
 - **Python** - 数据分析和自动化
-- **Go** - 微服务开发
 
 ### 开发工具
 - **IDE**: IntelliJ IDEA, VS Code
+- **AI**: Claude Code, Cursor
 - **版本控制**: Git, GitHub
 - **构建工具**: Maven, Gradle, npm
 - **容器化**: Docker, Kubernetes
@@ -31,8 +31,8 @@ comments: false
 ### 框架与技术
 - **后端**: Spring Boot, Spring Cloud
 - **前端**: Vue.js, React
-- **数据库**: MySQL, PostgreSQL, Redis
-- **消息队列**: RabbitMQ, Apache Kafka
+- **数据库**: MySQL, PostgreSQL, Redis, MongoDB
+- **消息队列**: RabbitMQ, RocketMQ
 
 ## 兴趣爱好
 
@@ -40,17 +40,6 @@ comments: false
 - 💻 开源项目贡献
 - 🎮 游戏（偶尔放松）
 - 🏃‍♂️ 跑步健身
-- 📝 技术写作
-
-## 博客内容
-
-在这个博客中，你可以找到：
-
-- **技术分享**: 编程技巧、框架使用心得
-- **工具推荐**: 提高开发效率的工具和插件
-- **读书笔记**: 技术书籍的读后感和总结
-- **项目实战**: 实际项目中遇到的问题和解决方案
-- **生活感悟**: 个人成长和思考
 
 ## 联系方式
 

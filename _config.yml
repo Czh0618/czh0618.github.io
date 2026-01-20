@@ -159,3 +159,7 @@ searchdb:
   content: true
   format: html
   limit: 10000
+
+# ECharts配置
+echarts:
+  enable: true
