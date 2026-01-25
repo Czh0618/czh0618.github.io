@@ -1,357 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>2023年度读书清单</title>
-    <url>/2023/05/07/2023Book/</url>
-    <content><![CDATA[已读书单技术《网络是怎样链接的》[日] 户根勤
-《Scrum精髓》Kenneth Rubin
-《计算机是怎样跑起来的》[日] 矢泽久雄
-
-文学《枪炮、病菌与钢铁》[美] 贾雷德·戴蒙德
-《阿Q正传》鲁迅
-
-理财《纳瓦尔宝典》[美] 埃里克·乔根森
-
-历史《挑战古人100天》云葭
-
-工具其他《一个广告人的自白》[美] 大卫·奥格威
-]]></content>
-      <categories>
-        <category>读书</category>
-      </categories>
-      <tags>
-        <tag>2023</tag>
-        <tag>读书笔记</tag>
-        <tag>技术书籍</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>我的博客搭建之旅</title>
-    <url>/2022/11/20/My-Blog-Journey/</url>
-    <content><![CDATA[其实我萌生搭建自己的博客这个念头已经很久了，最初是在2018年的时候就有了，那会儿看了一个hexo搭建博客的例子就开始弄自己的blog,不过仅仅只是浅浅的照猫画虎了一番，是在自己的GitHub上搭建了一个demo，仅此而已，然后就是到了现在，才又把这个重新捡了起来(在此为我之前的半途而废而感惭愧:joy:)
-咳咳，往事翻篇，现在我要认真的重新搞起我的blog啦！从零开始~
-其实个人搭建博客的技术选型我在WordPress和Hexo之间有过徘徊，下面简单汇总了这两种方式搭建博客各自的特点。
-WordPressWordPress(简称WP)是用PHP语言开发的一款免费开源的博客平台，目前是全球最流行的博客系统了，世界上约有43% 的网站都在使用WordPress，小到兴趣博客，大到新闻网站。so它也可以是一个CMS作为你的内容站。
-特性：
-
-功能强大、扩展性强插件众多
-对SEO搜索引擎友好，收录快，排名靠前
-主题众多
-写东西方便，任意一台电脑、手机即可
-
-具体的搭建步骤如下：
-
-注册自己的WordPress账号
-注册域名(国内有阿里云(万网)、新网、聚名网、江苏邦宁(中数)、Namesilo等)
-创建VPS(需要购买)
-域名解析
-连接VPS
-搭建WordPress
-主题、插件等配置
-
-HexoHexo是基于node.js git搭建的，所以需要有一定的极客属性，可以直接在GitHub pages平台上托管。
-特性：
-
-快速、简洁
-支持MarkDown，后期也好迁移
-DIY每个人都可以定义自己的blog
-
-步骤：
-
-本地搭建环境:
-
-安装并配置node.js&gt;Win
-安装git&gt;Win  Mac上推荐使用HomeBrew来安装管理
-
-
-注册GitHub账号，并创建自己的xxx.github.io
-
-创建仓库，并命名为xxx.github.io  
-设置pages，按提示操作即可  
-
-
-hexo操作
-
-安装hexo, npm install -g hexo 如果是国内的话可以设置npm镜像源为https://npmmirror.com/
-hexo初始化文章
-hexo 绑定GitHub  在_config.xml下设置deploy为GitHub，repo为你自己的仓库地址
-选择主题
-开放评论
-博客统计次数
-站点运行时间
-设置推荐文章
-博客字数统计
-文章阅读进度
-文章简介
-性能优化
-域名设置
-SEO搜索设置
-
-
-
-但是综合考虑(主要是成本)之后选择了Hexo,毕竟身为一个技(穷)术宅(人)，还是选择免费的Hexo可玩儿性比较高，哈哈。
-]]></content>
-      <categories>
-        <category>个人</category>
-      </categories>
-      <tags>
-        <tag>blog</tag>
-        <tag>个人成长</tag>
-        <tag>技术选型</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo 博客搭建指南</title>
-    <url>/2022/11/20/hexo-setting/</url>
-    <content><![CDATA[上一篇已经描述过了博客的技术选型，接下来就让我们来具体详解一下hexo的搭建之旅吧！
-主题选择hexo支持丰富的主体插件选择，具体可以参考这里,也可以在GitHub上寻找相关主题(搜索hexo-theme)，这里我采用的是Next主题,github地址为https://github.com/iissnan/hexo-theme-next/，这个主题的受欢迎程度也是很高的，相较而言更简洁，当然也可以做自己的主题，不过这都是后话了，现在遵循拿来即用的原则。
-开放评论这里主要还是基于第三方的评论系统，目前Next主题支持的有：
-
-disqus
-
-目前是很好用的一个评论系统，但是由于是墙外的应用，对于国内常规用户来说还是不太友好，暂时忍痛割爱了,不过可以看下效果图  
-
-
-changyan
-
-这是一个国内的平台,不知道为何，现在国内的好多应用都需要关注公众号，so不是太喜欢，贴个效果图感受一下  
-
-
-valine
-
-valine是基于leanCloud的无后端评论系统，所以：
-
-  注册LeanCode账号
-创建Valine应用
-进入应用，点击设置>应用Keys获取appId,appKey
-在主题配置文件_config.yml,这里的路径是next/_config.yml中找到valine然后配置上即可
-
-优化
-主要是优化valine在博客中的一些样式，比如去处掉Powered By，文本等，具体可以在主题的css目录下创建一个comment文件夹，放自己的自定义的样式，我这里是next&#x2F;source&#x2F;css&#x2F;_common下创建comment文件夹，再创建comment.styl样式文件，里面写优化的样式，写完之后要在main.styl引入才可生效
-可以在主题中开启评论邮箱通知，自定义placeholder等
-
-
-
-
-gitalk  首先要注册GitHub应用，https://github.com/settings/applications/new  注册完成之后，把Client ID和Client secrets填写到主题的_config.yml里面，gittalk对应的位置，开启即可
-  gitalk:
-    enable: true  #启用gitalk
-    github_id:   #github帐号 例：CodeHaotian
-    id: location.pathname  #此设置参照下文常见问题说明
-    repo:   #存放评论的仓库名称
-    client_id:   #application的id，即上文Client ID
-    client_secret:  #application的密码，即上文Client Secret
-    admin_user:  #页面显示联系**初始化评论 例：CodeHaotian
-    distraction_free_mode: true # Facebook-like distraction free mode
-    # Gitalk's display language depends on user's browser or system environment
-    # If you want everyone visiting your site to see a uniform language, you can set a force language value
-    # Available values: en | es-ES | fr | ru | zh-CN | zh-TW
-    language: zh-CN
-livere
-
-来必力，一家韩国的评论系统，这里不多做阐述了，感兴趣的大家可以去看看，不过不是太推荐
-
-
-rating
-
-
-统计字数使用hexo-word-counter统计文章的字数以及预期阅读时间。完成配置后，可以在每篇文章开头和页面底部显示字数和阅读时间
-
-安装
-
-$ npm install hexo-word-counter
-$ hexo clean
-
-配置在主配置文件_config.yml尾部添加
-
-symbols_count_time:
-  symbols: true
-  time: true
-  total_symbols: true
-  total_time: true
-  exclude_codeblock: false
-  awl: 4  # 平均字节长度，默认为4，cn≈2，en≈5，
-  wpm: 275 # 每分钟阅读次数，默认为275，Slow≈200，Normal≈275，Fast≈350
-  suffix: "mins."
-
-站点运行时间打开\themes\next\layout\_partial\footer.swig,在最后位置添加一串js代码
-&lt;div>
-&lt;span id="timeDate">载入天数...&lt;/span>&lt;span id="times">载入时分秒...&lt;/span>
-&lt;script>
-    var now = new Date(); 
-    function createtime() &#123; 
-        var grt= new Date("2020/11/09 00:00:00");//在此处修改你的建站时间
-        now.setTime(now.getTime()+250); 
-        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
-        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
-        if(String(hnum).length ==1 )&#123;hnum = "0" + hnum;&#125; minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
-        mnum = Math.floor(minutes); if(String(mnum).length ==1 )&#123;mnum = "0" + mnum;&#125; 
-        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
-        snum = Math.round(seconds); if(String(snum).length ==1 )&#123;snum = "0" + snum;&#125; 
-        document.getElementById("timeDate").innerHTML = "已运行 "+dnum+" 天 "; 
-        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
-    &#125; 
-setInterval("createtime()",250);
-&lt;/script>
-&lt;/div>
-
-总访问人数Next主题默认支持,修改&#x2F;theme&#x2F;next&#x2F;_config.yml中的busuanzi_count，改为true即可.这个只是很普通的显示总站的访问量和人数
-推荐文章这里使用的是第三方的一款插件，具体预览效果可以看：
-
-安装插件npm install hexo-recommended-posts --save
-下载推荐文章列表在编辑完新的文章之后，使用如下命令获取推荐列表hexo recommend
-自定义如果默认配置不满足需求，可以在hexo的根目录_config.yml里添加配置：recommended_posts:
-  server: https://api.truelaurel.com #后端推荐服务器地址
-  timeoutInMillis: 10000 #服务时长，超过此时长，则使用离线推荐模式
-  internalLinks: 2 #内部文章数量
-  externalLinks: 1 #外部文章数量
-  fixedNumber: false
-  autoDisplay: true #自动在文章底部显示推荐文章
-  excludePattern: []
-  titleHtml: &lt;h1>猜你喜欢&lt;span style="font-size:0.45em; color:gray">（由&lt;a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件&lt;/a>驱动）&lt;/span>&lt;/h1> #自定义标题
-其中 excludePattern 可以添加想要被过滤的链接的正则表达式, 如配置为 [&quot;example.com&quot;], 则所有包含 example.com 的链接都会从推荐文章中过滤掉.
-
-fixedNumber 字段用来控制是否返回固定数量的推荐文章, 如果默认推荐文章不够的话会填充当前文章的前后文章作为推荐文章.
-阅读进度找到next主题的_config.yml找到reading_progress,把false改为true即可，默认是支持的
-文章简介目前hexo不再支持老的auto_excerpt，所以现在我们引入新的插件
-
-hexo-excerpt
-安装  npm install hexo-excerpt --save
-  打开hexo根目录的_config.yml添加如下配置  excerpt:
-    depth: 2  #按层来算，也就是按代码块来算
-    excerpt_excludes: []
-    more_excludes: []
-    hideWholePostExcerpts: true
-  打开主题的配置文件/theme/next/_config.yml,将excerpt_description设置为true,read_more_btn设置为true  注：按代码块的显示可能有些不太友好，所以下面我们引入第二个插件
-
-
-hexo-auto-excerpt
-安装  npm install hexo-auto-excerpt --save
-  安装完成后在hexo的根目录_config.yml下添加excerpt_length: 100即可，表示摘要的字数  注：这个会把文本块打乱，只是以文字显示在首页
-
-
-
-性能优化待定
-域名设置域名可以在freenom.com上面注册一个免费的前提需要有梯子,然后可以搜索自己的想要的域名，最高可以免费12个月哦，添加完之后有个配置forward url可以设置自己的GitHub page域名，这样访问注册的域名就可以跳转到GitHub page访问博客了。
-SEO搜索
-Google Search登录谷歌站点，添加自己的站点域名，然后选择TXT验证，完毕之后，添加个人站点地图
-
-]]></content>
-      <categories>
-        <category>工具</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-        <tag>博客搭建</tag>
-        <tag>技术分享</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>IntelliJ IDEA 插件推荐指南</title>
-    <url>/2023/05/16/ideaPlugin/</url>
-    <content><![CDATA[下面主要是汇总一下自己使用的idea插件，这里只是罗列以及简介
-
-AI
-GitHub Copilot
-
-github的代码辅助工具，可以根据注释或上下文自动生成代码，目前支持了Agent代理模式，但是不太好用，目前还是主要使用Tab模式
-
-工具
-Auto filling Java call arguments
-
-功能：调用函数时，alt+enter自动填充函数的形参
-
-
-Alibaba Java Coding Guidelines
-
-以阿里巴巴的Java代码规范校验，会自动检测代码不规范的地方
-
-
-CamelCase
-
-在 kebab-case、SNAKE_CASE、PascalCase、camelCase、snake_case 或 space case 之间轻松切换。请参阅编辑菜单或使用 ⇧ + ⌥ + U &#x2F; Shift + Alt + U。允许禁用某些转换或在首选项中更改它们的顺序。
-
-
-jclasslib is a bytecode viewer
-
-生成Java字节码文件
-
-
-Key Promoter X
-
-自动提示功能对应的快捷键
-
-
-Maven Helper
-
-方便的管理maven依赖，尤其是分析依赖注入冲突
-
-
-Rainbow Brackets
-
-彩虹括号
-
-
-RestfulTookit-fix
-
-restFul接口查找
-
-
-Swith2Cursor
-
-支持在cursor开发工具里打开当前的项目，从而使用Agent功能
-
-
-POJO to JSON
-
-将POJO转换成JSON，适合跟前端对接数据结构
-
-学习
-LeetCode Editor
-
-同步并管理leetCode的问题
-
-
-PDF Viewer
-
-阅读PDF文件的插件，但是不能管理，没有页签
-
-
-MetricsReload
-
-分析代码复杂度，ps:没用过]]></content>
-      <categories>
-        <category>工具</category>
-      </categories>
-      <tags>
-        <tag>idea</tag>
-        <tag>plugin</tag>
-        <tag>工具推荐</tag>
-        <tag>开发效率</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>v2ray</title>
-    <url>/2022/11/14/v2Ray/</url>
-    <content><![CDATA[v2ray使用简介官网：https://www.v2ray.comv2Ray（Project V）相对于Shadowsocks,支持更多协议 (Socks、HTTP、TLS、TCP、mKCP、WebSocket)，还有更为强大的路由功能，更像是个全能选手
-服务器(VPS)购买这里我采用的是HostWinds，之前有选择购买搬瓦工，但是IP更换没有hostWinds方便，地址：https://clients.hostwinds.com/
-当然，搬瓦工官方也出了自己搭建的v2Ray Just My Socks
-安装输入下面的命令，然后按步骤操作
-bash &lt;(curl -s -L https://git.io/v2ray.sh)
-
-
-安装完成后，可以输入: v2Ray url 查看客户端需要配置的链接
-BBR优化备注当前使用的配置来自于：https://github.com/233boy/v2ray
-]]></content>
-      <categories>
-        <category>v2Ray</category>
-      </categories>
-      <tags>
-        <tag>bridge</tag>
-        <tag>梯子</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Java 开发中的性能优化技巧</title>
     <url>/2025/06/16/java-performance-optimization/</url>
     <content><![CDATA[Java 开发中的性能优化技巧在 Java 开发过程中，性能优化是一个永恒的话题。今天我来分享一些实用的性能优化技巧，这些技巧在实际项目中都经过验证。
@@ -505,6 +154,531 @@ public class UserService &#123;
       </tags>
   </entry>
   <entry>
+    <title>IntelliJ IDEA 插件推荐指南</title>
+    <url>/2023/05/16/ideaPlugin/</url>
+    <content><![CDATA[下面主要是汇总一下自己使用的idea插件，这里只是罗列以及简介
+
+AI
+GitHub Copilot
+
+github的代码辅助工具，可以根据注释或上下文自动生成代码，目前支持了Agent代理模式，但是不太好用，目前还是主要使用Tab模式
+
+工具
+Auto filling Java call arguments
+
+功能：调用函数时，alt+enter自动填充函数的形参
+
+
+Alibaba Java Coding Guidelines
+
+以阿里巴巴的Java代码规范校验，会自动检测代码不规范的地方
+
+
+CamelCase
+
+在 kebab-case、SNAKE_CASE、PascalCase、camelCase、snake_case 或 space case 之间轻松切换。请参阅编辑菜单或使用 ⇧ + ⌥ + U &#x2F; Shift + Alt + U。允许禁用某些转换或在首选项中更改它们的顺序。
+
+
+jclasslib is a bytecode viewer
+
+生成Java字节码文件
+
+
+Key Promoter X
+
+自动提示功能对应的快捷键
+
+
+Maven Helper
+
+方便的管理maven依赖，尤其是分析依赖注入冲突
+
+
+Rainbow Brackets
+
+彩虹括号
+
+
+RestfulTookit-fix
+
+restFul接口查找
+
+
+Swith2Cursor
+
+支持在cursor开发工具里打开当前的项目，从而使用Agent功能
+
+
+POJO to JSON
+
+将POJO转换成JSON，适合跟前端对接数据结构
+
+学习
+LeetCode Editor
+
+同步并管理leetCode的问题
+
+
+PDF Viewer
+
+阅读PDF文件的插件，但是不能管理，没有页签
+
+
+MetricsReload
+
+分析代码复杂度，ps:没用过]]></content>
+      <categories>
+        <category>工具</category>
+      </categories>
+      <tags>
+        <tag>idea</tag>
+        <tag>plugin</tag>
+        <tag>工具推荐</tag>
+        <tag>开发效率</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>日本冬日游记</title>
+    <url>/2026/01/20/trip/japan-2026-01-sapporo-tokyo/</url>
+    <content><![CDATA[前情提要起因去日本是因为24年我们从巴厘岛回来之后，看到朋友圈有同事去日本，就提了一嘴说下次去日本，然后就此埋下了一个引线。去年10月眼看这一年要过完了，我们俩这一年也是忙忙碌了一年了，加班的节奏几乎贯穿了一整年，就想着出去放送一下，，就说要不就去日本吧，就此开启了我们的日本周期！
+之所以选在札幌、东京，是因为本身的目的地是要去札幌，但是10天的旅程，就说要不再去东京吧。对，就是这样。
+
+
+行程准备
+ 签证
+ 购买机票
+ 预定酒店
+ 兑换5万日元
+ 流量卡（淘宝买了两张一张无限流量、一张每天3G）
+ iPhone手机开通西瓜卡
+ 充电宝（3C）
+ visa Japan Web在线办理入境
+ 充电转换头
+ 一次性内衣、毛巾等
+
+行程速览
+本次出行为了休闲游，所以路线没有规划那么慢，基本上就是一天一个地方，citywalk为主
+
+
+
+
+日期
+地点
+备注
+
+
+
+1月10日
+东京羽田
+入境+转机
+
+
+1月10日
+札幌
+入住酒店
+
+
+1月11日
+札幌citywalk
+博野、札幌电视塔、大通公园、狸小路商业街
+
+
+1月12日
+小樽
+运河、祝津展望台
+
+
+1月13日
+支芴湖
+大雪
+
+
+1月14日
+去东京
+新千岁机场、羽田机场、酒店
+
+
+1月14日
+东京
+东京塔
+
+
+1月15日
+浅草寺
+上野公园、东京科技博物馆
+
+
+1月16日
+富士山
+河口湖、忍野八海
+
+
+1月17日
+涩谷
+表参道
+
+
+1月18日
+银座
+walk
+
+
+1月19日
+回北京
+
+
+
+
+
+
+
+札幌（1&#x2F;10–1&#x2F;14）10日起飞日本早上六点半就起床了，收拾完毕之后，就坐上了提前预约的去大兴机场的车，这里有个小插曲，因为是在飞猪预约的车，上车之后师傅报我的手机号后四位没对得上（师傅说，你是从飞猪预约的吧，他们家老有这个问题），看来阿里的这么简单的东西也是bug啊。到机场正常值机、托运（买了南航的两件行李额，但是因为把相机放里面托运了，里面的电池让南航扫到了，竟然给开箱子-箱子是锁着的，把电池取走了，还放了张纸条，可以微信扫码自付邮费邮寄），然后就去登机口候机了。
+下午两点多到的东京羽田机场，然后我们出关，再自己转T2做国内的航班去札幌（因为买的时候直达札幌的航班往返太贵了，人均八千多），这里晚点了，本来是下午六点五十的飞机，延误到了七点半才让登机，落地札幌就九点半多了，取行李（这里吐槽一下飞猪上竟然没有行李转盘的显示，让我找了好久），坐JR线直达札幌站，再到酒店check in已经十点了，晚饭还没吃，还好酒店门口有711，所以来日本的第一顿就在711解决了（这里不得不说日本的711太丰富了）。
+
+  
+    
+    
+    
+  
+
+
+
+11日札幌市内 Citywalk这一天计划的就是缓冲，所以我们睡到了自然醒，然后就开始了札幌的一日citywalk，路线是从酒店-&gt;市政厅的小楼-&gt;大通公园（札幌电视塔）-&gt;狸小路商业街-&gt;博野十字路口-&gt;北海道神宫-&gt;晚饭吃的成吉思汗烤肉 
+我们出门的时候将近中午了，brunch实在711解决的，所以到中午也不饿，这会儿天气还是不错的，到市政厅前面的那条街上还有几个小姐姐穿和服拍照（也是第一次现场看到有人穿和服，还是挺惊艳的），然后就沿着路走到了大通公园，一个长条的公园，路上还有小哥哥在唱歌，也看到了札幌电视塔，一路上路过了狸小路商业街，到了博野十字路口，对其实我们本来是奔着十字路口来的，市政厅、大通公园、狸小路都是在酒店到博野的这条线上，所以也算是都去过了，这会儿时间还早，我们想着要不就去一下北海道神宫，搜了一下Google Map，发现也不远，从大通站坐地铁到圆山公园就是了，这里有个前提因为第一次坐日本的地铁（头天晚上坐的那个JR线严格意义上不算），发现出站口是真的多啊，多的能到一百多个，不熟悉的会感觉底下跟迷宫似的。 
+我们中午到了圆山公园，北海道神宫就在公园的里面，真实雪的世界啊，大家都在里面开心的玩闹，有堆雪人的、追逐打闹的，但更多的还是拍照的，我们也情不自禁融入了其中，沿途拍了几张照片之后我们就汇入了去神宫的人群里，过了神宫的鸟居，一路上都是买吃的小贩，好不热闹。到了神宫门口，还要排队进入，旁边有个洗手的地方（好像是祈福之类的水），排队进去之后也没有拜（毕竟不拜异国的神），旁边有写祝福语的。
+我们从神宫出来的时候刚好下雪了，这算是到了札幌的第一场雪。
+
+  
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+  
+  ‹
+  ›
+  
+
+
+小贴士：
+
+交通：主要是腿，还有坐地铁
+时间：中午
+避坑：记得防滑
+
+12日小樽小樽是这次来札幌的目标之一，别的地方如函馆、登别等都有点远，没有特别计划。但是也很不幸我们没能去成天狗山，缆车停了，但是还好提前攻略了还有个祝津展望台（在水族馆上面）。坐JR到小樽之后出站，站前坐10&#x2F;11线去水族馆方向，到了水族馆就可以上去展望台了。风景还是不错的，就是风太大了，在我们拍照的时候还有人过来拍婚纱照（真实一生爱拍照的中国女人）。
+后面还去了小樽运河，在河边碰到一群欧美国家的人在做社会实验之类的东西，有人拿着牌子写着免费拥抱，还有人给免费饼干和咖啡，不过我们都婉拒了。在旁边的小樽出拔小路吃了来日本的第一顿居酒屋，感觉酱油味道好重，也许还是不太适合我这中国胃吧。
+
+  
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+  
+  ‹
+  ›
+  
+
+
+小贴士：
+
+交通：从札幌站坐JR线到小樽就行
+返程：我们是下午四点多往回走的
+
+13日北海道大学我们是在要去支芴湖的早上顺道来这里逛逛，毕竟也是“北大”。就在我们住的酒店后面，七百米的具体，但是来了两天了也一直没去，所以今天时间还早就特意留出来时间去一趟。雪后的北大很静谧，有种大学的神圣感觉。
+
+到达方式：步行
+
+
+  
+    
+      
+    
+    
+      
+    
+    
+      
+    
+  
+  ‹
+  ›
+  
+
+
+
+小贴士：
+
+推荐停留：1个小时
+
+13日支芴湖（冰蓝色的冬日）其实本来我们的想法是去洞爷湖的，但是因为今天天气不好，最重要的是去那里太远了，也太贵了，就算坐JR线也贵的离谱。但是我们还是要去有湖的地放，就在地图上找，找到了支芴湖，然后就开始小红书攻略了一下就去了。
+我们是坐JR线到千岁站，然后在站前坐空支4路前往支芴湖，一天单程只有四班车，我们坐的是中午十一点多的那班，路上还碰到一个国内的小哥同路。
+到了支芴湖，就开始下雪，黑压压的，天气不好也看不到湖中的山，特别像寂静岭似的。也有幸碰上了一个觅食的野生小狐狸家族。
+回去的JR线上遇到了暴风雪，线路停摆了一个多小时，还好回去的早（所以这里建议天气不好就早点回去，我们是坐的下午三点四十的巴士）
+
+  
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+  
+  ‹
+  ›
+  
+
+
+
+小贴士：
+
+交通：JR-&gt;巴士
+装备：手套、暖宝宝
+遗憾：天气不好，而且1月31日开始有冰柱祭
+
+札幌小结第一次到日本，也是第一次到札幌，放眼望去皆是白雪皑皑的世界，绝对温度不太冷，待的这几天大多是零下三四度，就是风太大了，所以体感温度还是很冷的。这次只是初次领略北海道的雪国，下次一定要去美瑛、登别、洞爷湖（好天气的情况）、函馆等地方看看，当然最重要的是来了这里还是要体验一下滑雪。可惜的是没有喝到札幌JR站的啤酒，下次一定补上。
+
+移动日（1&#x2F;14）14日札幌 → 东京：从雪国切换到都市今天的时间就是飞东京，在札幌机场买了点白色恋人、六花亭、北海道大学的饼干，算是给自己带了点纪念品。比较可惜的是没有在安检前买东西，品类有点少。到了东京因为就住在六本木，离东京塔很近，到了酒店放下行李就去东京塔逛了逛，也是第一个景点了。
+
+  
+    
+      
+    
+    
+      
+    
+    
+      
+    
+  
+  ‹
+  ›
+  
+
+
+
+东京（1&#x2F;14–1&#x2F;19）15日浅草寺-上野公园citywalk今天也是计划的一部分，浅草寺一日citywalk，没到一个新的地方先适应一下当地的生活节奏。看攻略浅草寺是东京都最古老的寺庙了，供奉的是浅草观音。到的时候差不多中午，人山人海，几乎都是外地游客。所以商业化也很重，不过对于新到的我来讲也无所谓。在浅草跟风抽了个签，吉签，如果抽到凶签可以留下，再去抽，直到抽到吉签为止。
+在浅草也能看到晴空塔，所以也算是打了卡了。
+从浅草出来后，时间还在，看了看上野公园就在附近不远，随走路过去吧，也领略一下东京的巷道（之前看过一些Vlog也想实地体验一下），每个巷子都挺宁静的，也干净，偶然碰到个正定寺，感觉跟到了河北正定似的，挺好玩的。
+到了上野公园溜达了一下，攻略上有说这是东京的第一个公园，但是感觉也挺普通的，跟北京的朝阳公园也差不多。不过里面有个动物园好像是有熊猫，需要买票进去，可是阴差阳错买成了旁边的科技博物馆的门票（从google map跳转到klook买的，这里还是建议到线下了直接从线下买就行），奔着买都买了来都来了就去了科技博物馆。没想到还是挺值的，见识了另一番动物园的景象。
+
+  
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+  
+  ‹
+  ›
+  
+
+
+16日富士山去富士山最方便的还是坐大巴。最好还是提前两周订，但是我们之前没来得及，所幸刚落地东京的时候订还有票，一张8800日元，可以去他们的巴士官网上买。
+我们买的是早上七点半的票，所以早早就起来了，到新宿站坐巴士，在4层。新宿站太大了，在地下绕的有点迷糊，还是从地面上走吧。
+到富士山两个小时的路程，本来想着路上可以看点什么景色，结果什么也没有，还是补觉吧。
+到河口湖站下了车，以为就到了，结果还是需要坐巴士观光，或者租自行车，我们嫌坐自行车麻烦，就去坐巴士了，结果还是吃了没坐攻略的亏，坐上了去忍野八海的车（就是八个小水池），这里后面再说。
+我们下了车先去了网红的罗森便利店，就在车站旁边三四百米远的地方，人很多要乘着早上天气好打卡。再回来坐公交去了忍野八海，这里的观光巴士有红线（新手友好河口湖）、绿线（西湖）、蓝线（本栖湖）等，我们小红书功率了一下是在6号站台等红线（看巴士左上角的颜色），结果我们看了个车身差不多的（也紧张）就上车了，然后就误打误撞到了忍野八海，随便逛了一下，又坐车回去河口湖，重新去坐红线（这里浪费了1、2个小时）。
+
+  
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+  
+  ‹
+  ›
+  
+
+
+
+17日涩谷今日去涩谷是要就是奔着涩谷十字路口去的，涩谷sky因为预约的太晚了，没有好的时间点，就没去成。最后这两天也就是购物体验一下日式服务。
+
+  
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+  
+  ‹
+  ›
+  
+
+
+
+18日银座来银座感受世界著名的商业街的繁华。
+
+  
+    
+      
+    
+    
+      
+    
+    
+      
+    
+  
+  ‹
+  ›
+  
+
+
+东京小结来东京最能感受到的是，日本的线下经济确实很繁荣，日式服务也很好，而且城市建设，地标都很友好，东京的外国人也非常多，不愧是国际化大都市。但是日本的饭确实吃的不太习惯，虽然也是国际上最符合中国人的胃了。还有如果吃饭没有预约就只能711或者回高屋之类的了，我们在回高屋吃了六七顿……这次可惜的没去了秋叶原、镰仓，下次要去，也要看一场花火大会。
+
+账单与复盘花费汇总
+单位：人民币，是否人均：否
+
+
+
+
+类别
+金额
+备注
+
+
+
+交通（国际段）
+4580
+往返东京机票
+
+
+交通（日本国内）
+2432
+东京札幌往返
+
+
+市内交通
+2046
+JR、地铁、巴士
+
+
+住宿（札幌）
+2525
+4晚
+
+
+住宿（东京）
+3469
+5晚
+
+
+餐饮
+2234
+拉面、烤肉、西餐、711
+
+
+其他
+2864
+纪念品等
+
+
+合计
+20150左右
+
+
+
+一些感受
+第一次去日本，在札幌感受到了不一样的雪国，这是我在北京感受不到的，在东京感受到了国际化大都市，各个国家的人都在这里生活、工作、学习，711有好多外国的收银员啊。
+日本的环境确实很干净，我想当地大街上没有垃圾桶是因为大家都很自觉吧。
+本地人并没有穿的很贵的衣服，基本上看着也都是优衣库类似的，但是很干净
+能切实的感受到日本科技发展的历史，因为有好多地方包括餐馆都有便携的设备，但是也都太古老了
+每个地方大到酒店、小到餐馆都有自己的官网，很方便
+第一次有好多地方没有去到，但是可以留作下次
+
+]]></content>
+      <categories>
+        <category>个人</category>
+      </categories>
+      <tags>
+        <tag>旅行</tag>
+        <tag>日本</tag>
+        <tag>冬季</tag>
+        <tag>札幌</tag>
+        <tag>东京</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>性能指标详解</title>
     <url>/2024/04/04/performance-index/</url>
     <content><![CDATA[简述在开发测试网站时，一般都有几个指标来衡量系统的性能，其中吞吐量、并发数、QPS、TPS、有效吞吐量、吞吐率、网络流量等指标，接下来就这几种指标简单聊聊。
@@ -545,6 +719,273 @@ Java JVM中的Parallel Scavenge垃圾收集器，重点是关注的吞吐量，�
         <tag>性能</tag>
         <tag>指标</tag>
         <tag>性能测试</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>2023年度读书清单</title>
+    <url>/2023/05/07/2023Book/</url>
+    <content><![CDATA[已读书单技术《网络是怎样链接的》[日] 户根勤
+《Scrum精髓》Kenneth Rubin
+《计算机是怎样跑起来的》[日] 矢泽久雄
+
+文学《枪炮、病菌与钢铁》[美] 贾雷德·戴蒙德
+《阿Q正传》鲁迅
+
+理财《纳瓦尔宝典》[美] 埃里克·乔根森
+
+历史《挑战古人100天》云葭
+
+工具其他《一个广告人的自白》[美] 大卫·奥格威
+]]></content>
+      <categories>
+        <category>读书</category>
+      </categories>
+      <tags>
+        <tag>2023</tag>
+        <tag>读书笔记</tag>
+        <tag>技术书籍</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo 博客搭建指南</title>
+    <url>/2022/11/20/hexo-setting/</url>
+    <content><![CDATA[上一篇已经描述过了博客的技术选型，接下来就让我们来具体详解一下hexo的搭建之旅吧！
+主题选择hexo支持丰富的主体插件选择，具体可以参考这里,也可以在GitHub上寻找相关主题(搜索hexo-theme)，这里我采用的是Next主题,github地址为https://github.com/iissnan/hexo-theme-next/，这个主题的受欢迎程度也是很高的，相较而言更简洁，当然也可以做自己的主题，不过这都是后话了，现在遵循拿来即用的原则。
+开放评论这里主要还是基于第三方的评论系统，目前Next主题支持的有：
+
+disqus
+
+目前是很好用的一个评论系统，但是由于是墙外的应用，对于国内常规用户来说还是不太友好，暂时忍痛割爱了,不过可以看下效果图  
+
+
+changyan
+
+这是一个国内的平台,不知道为何，现在国内的好多应用都需要关注公众号，so不是太喜欢，贴个效果图感受一下  
+
+
+valine
+
+valine是基于leanCloud的无后端评论系统，所以：
+
+  注册LeanCode账号
+创建Valine应用
+进入应用，点击设置>应用Keys获取appId,appKey
+在主题配置文件_config.yml,这里的路径是next/_config.yml中找到valine然后配置上即可
+
+优化
+主要是优化valine在博客中的一些样式，比如去处掉Powered By，文本等，具体可以在主题的css目录下创建一个comment文件夹，放自己的自定义的样式，我这里是next&#x2F;source&#x2F;css&#x2F;_common下创建comment文件夹，再创建comment.styl样式文件，里面写优化的样式，写完之后要在main.styl引入才可生效
+可以在主题中开启评论邮箱通知，自定义placeholder等
+
+
+
+
+gitalk  首先要注册GitHub应用，https://github.com/settings/applications/new  注册完成之后，把Client ID和Client secrets填写到主题的_config.yml里面，gittalk对应的位置，开启即可
+  gitalk:
+    enable: true  #启用gitalk
+    github_id:   #github帐号 例：CodeHaotian
+    id: location.pathname  #此设置参照下文常见问题说明
+    repo:   #存放评论的仓库名称
+    client_id:   #application的id，即上文Client ID
+    client_secret:  #application的密码，即上文Client Secret
+    admin_user:  #页面显示联系**初始化评论 例：CodeHaotian
+    distraction_free_mode: true # Facebook-like distraction free mode
+    # Gitalk's display language depends on user's browser or system environment
+    # If you want everyone visiting your site to see a uniform language, you can set a force language value
+    # Available values: en | es-ES | fr | ru | zh-CN | zh-TW
+    language: zh-CN
+livere
+
+来必力，一家韩国的评论系统，这里不多做阐述了，感兴趣的大家可以去看看，不过不是太推荐
+
+
+rating
+
+
+统计字数使用hexo-word-counter统计文章的字数以及预期阅读时间。完成配置后，可以在每篇文章开头和页面底部显示字数和阅读时间
+
+安装
+
+$ npm install hexo-word-counter
+$ hexo clean
+
+配置在主配置文件_config.yml尾部添加
+
+symbols_count_time:
+  symbols: true
+  time: true
+  total_symbols: true
+  total_time: true
+  exclude_codeblock: false
+  awl: 4  # 平均字节长度，默认为4，cn≈2，en≈5，
+  wpm: 275 # 每分钟阅读次数，默认为275，Slow≈200，Normal≈275，Fast≈350
+  suffix: "mins."
+
+站点运行时间打开\themes\next\layout\_partial\footer.swig,在最后位置添加一串js代码
+&lt;div>
+&lt;span id="timeDate">载入天数...&lt;/span>&lt;span id="times">载入时分秒...&lt;/span>
+&lt;script>
+    var now = new Date(); 
+    function createtime() &#123; 
+        var grt= new Date("2020/11/09 00:00:00");//在此处修改你的建站时间
+        now.setTime(now.getTime()+250); 
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+        if(String(hnum).length ==1 )&#123;hnum = "0" + hnum;&#125; minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 )&#123;mnum = "0" + mnum;&#125; 
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+        snum = Math.round(seconds); if(String(snum).length ==1 )&#123;snum = "0" + snum;&#125; 
+        document.getElementById("timeDate").innerHTML = "已运行 "+dnum+" 天 "; 
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+    &#125; 
+setInterval("createtime()",250);
+&lt;/script>
+&lt;/div>
+
+总访问人数Next主题默认支持,修改&#x2F;theme&#x2F;next&#x2F;_config.yml中的busuanzi_count，改为true即可.这个只是很普通的显示总站的访问量和人数
+推荐文章这里使用的是第三方的一款插件，具体预览效果可以看：
+
+安装插件npm install hexo-recommended-posts --save
+下载推荐文章列表在编辑完新的文章之后，使用如下命令获取推荐列表hexo recommend
+自定义如果默认配置不满足需求，可以在hexo的根目录_config.yml里添加配置：recommended_posts:
+  server: https://api.truelaurel.com #后端推荐服务器地址
+  timeoutInMillis: 10000 #服务时长，超过此时长，则使用离线推荐模式
+  internalLinks: 2 #内部文章数量
+  externalLinks: 1 #外部文章数量
+  fixedNumber: false
+  autoDisplay: true #自动在文章底部显示推荐文章
+  excludePattern: []
+  titleHtml: &lt;h1>猜你喜欢&lt;span style="font-size:0.45em; color:gray">（由&lt;a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件&lt;/a>驱动）&lt;/span>&lt;/h1> #自定义标题
+其中 excludePattern 可以添加想要被过滤的链接的正则表达式, 如配置为 [&quot;example.com&quot;], 则所有包含 example.com 的链接都会从推荐文章中过滤掉.
+
+fixedNumber 字段用来控制是否返回固定数量的推荐文章, 如果默认推荐文章不够的话会填充当前文章的前后文章作为推荐文章.
+阅读进度找到next主题的_config.yml找到reading_progress,把false改为true即可，默认是支持的
+文章简介目前hexo不再支持老的auto_excerpt，所以现在我们引入新的插件
+
+hexo-excerpt
+安装  npm install hexo-excerpt --save
+  打开hexo根目录的_config.yml添加如下配置  excerpt:
+    depth: 2  #按层来算，也就是按代码块来算
+    excerpt_excludes: []
+    more_excludes: []
+    hideWholePostExcerpts: true
+  打开主题的配置文件/theme/next/_config.yml,将excerpt_description设置为true,read_more_btn设置为true  注：按代码块的显示可能有些不太友好，所以下面我们引入第二个插件
+
+
+hexo-auto-excerpt
+安装  npm install hexo-auto-excerpt --save
+  安装完成后在hexo的根目录_config.yml下添加excerpt_length: 100即可，表示摘要的字数  注：这个会把文本块打乱，只是以文字显示在首页
+
+
+
+性能优化待定
+域名设置域名可以在freenom.com上面注册一个免费的前提需要有梯子,然后可以搜索自己的想要的域名，最高可以免费12个月哦，添加完之后有个配置forward url可以设置自己的GitHub page域名，这样访问注册的域名就可以跳转到GitHub page访问博客了。
+SEO搜索
+Google Search登录谷歌站点，添加自己的站点域名，然后选择TXT验证，完毕之后，添加个人站点地图
+
+]]></content>
+      <categories>
+        <category>工具</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>博客搭建</tag>
+        <tag>技术分享</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>我的博客搭建之旅</title>
+    <url>/2022/11/20/My-Blog-Journey/</url>
+    <content><![CDATA[其实我萌生搭建自己的博客这个念头已经很久了，最初是在2018年的时候就有了，那会儿看了一个hexo搭建博客的例子就开始弄自己的blog,不过仅仅只是浅浅的照猫画虎了一番，是在自己的GitHub上搭建了一个demo，仅此而已，然后就是到了现在，才又把这个重新捡了起来(在此为我之前的半途而废而感惭愧:joy:)
+咳咳，往事翻篇，现在我要认真的重新搞起我的blog啦！从零开始~
+其实个人搭建博客的技术选型我在WordPress和Hexo之间有过徘徊，下面简单汇总了这两种方式搭建博客各自的特点。
+WordPressWordPress(简称WP)是用PHP语言开发的一款免费开源的博客平台，目前是全球最流行的博客系统了，世界上约有43% 的网站都在使用WordPress，小到兴趣博客，大到新闻网站。so它也可以是一个CMS作为你的内容站。
+特性：
+
+功能强大、扩展性强插件众多
+对SEO搜索引擎友好，收录快，排名靠前
+主题众多
+写东西方便，任意一台电脑、手机即可
+
+具体的搭建步骤如下：
+
+注册自己的WordPress账号
+注册域名(国内有阿里云(万网)、新网、聚名网、江苏邦宁(中数)、Namesilo等)
+创建VPS(需要购买)
+域名解析
+连接VPS
+搭建WordPress
+主题、插件等配置
+
+HexoHexo是基于node.js git搭建的，所以需要有一定的极客属性，可以直接在GitHub pages平台上托管。
+特性：
+
+快速、简洁
+支持MarkDown，后期也好迁移
+DIY每个人都可以定义自己的blog
+
+步骤：
+
+本地搭建环境:
+
+安装并配置node.js&gt;Win
+安装git&gt;Win  Mac上推荐使用HomeBrew来安装管理
+
+
+注册GitHub账号，并创建自己的xxx.github.io
+
+创建仓库，并命名为xxx.github.io  
+设置pages，按提示操作即可  
+
+
+hexo操作
+
+安装hexo, npm install -g hexo 如果是国内的话可以设置npm镜像源为https://npmmirror.com/
+hexo初始化文章
+hexo 绑定GitHub  在_config.xml下设置deploy为GitHub，repo为你自己的仓库地址
+选择主题
+开放评论
+博客统计次数
+站点运行时间
+设置推荐文章
+博客字数统计
+文章阅读进度
+文章简介
+性能优化
+域名设置
+SEO搜索设置
+
+
+
+但是综合考虑(主要是成本)之后选择了Hexo,毕竟身为一个技(穷)术宅(人)，还是选择免费的Hexo可玩儿性比较高，哈哈。
+]]></content>
+      <categories>
+        <category>个人</category>
+      </categories>
+      <tags>
+        <tag>blog</tag>
+        <tag>个人成长</tag>
+        <tag>技术选型</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>v2ray</title>
+    <url>/2022/11/14/v2Ray/</url>
+    <content><![CDATA[v2ray使用简介官网：https://www.v2ray.comv2Ray（Project V）相对于Shadowsocks,支持更多协议 (Socks、HTTP、TLS、TCP、mKCP、WebSocket)，还有更为强大的路由功能，更像是个全能选手
+服务器(VPS)购买这里我采用的是HostWinds，之前有选择购买搬瓦工，但是IP更换没有hostWinds方便，地址：https://clients.hostwinds.com/
+当然，搬瓦工官方也出了自己搭建的v2Ray Just My Socks
+安装输入下面的命令，然后按步骤操作
+bash &lt;(curl -s -L https://git.io/v2ray.sh)
+
+
+安装完成后，可以输入: v2Ray url 查看客户端需要配置的链接
+BBR优化备注当前使用的配置来自于：https://github.com/233boy/v2ray
+]]></content>
+      <categories>
+        <category>v2Ray</category>
+      </categories>
+      <tags>
+        <tag>bridge</tag>
+        <tag>梯子</tag>
       </tags>
   </entry>
   <entry>
