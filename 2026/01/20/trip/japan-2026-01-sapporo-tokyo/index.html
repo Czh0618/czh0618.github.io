@@ -17,7 +17,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"czh0618.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":false,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"czh0618.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":false,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="1月10-14札幌，14-19东京。按地点整理游玩与照片，文末汇总花费与复盘。">
@@ -76,7 +76,7 @@
 <meta property="og:image" content="https://czh0618.github.io/img/trip/japan-2026-01/ginza/2.jpeg">
 <meta property="og:image" content="https://czh0618.github.io/img/trip/japan-2026-01/ginza/3.jpeg">
 <meta property="article:published_time" content="2026-01-20T04:00:00.000Z">
-<meta property="article:modified_time" content="2026-01-25T09:39:56.364Z">
+<meta property="article:modified_time" content="2026-01-25T12:57:11.806Z">
 <meta property="article:author" content="耳东华">
 <meta property="article:tag" content="旅行">
 <meta property="article:tag" content="日本">
@@ -279,7 +279,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2026-01-25 17:39:56" itemprop="dateModified" datetime="2026-01-25T17:39:56+08:00">2026-01-25</time>
+                <time title="修改时间：2026-01-25 20:57:11" itemprop="dateModified" datetime="2026-01-25T20:57:11+08:00">2026-01-25</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -993,6 +993,7 @@ setInterval("createtime()",250);
 
   
   <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
 
 <script src="/js/utils.js"></script>
 
@@ -1058,6 +1059,800 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
     });
   }, window.Valine);
 });
+</script>
+<script>
+/* Dark Mode Toggle for NexT Theme */
+(function() {
+  'use strict';
+  
+  // 添加暗黑模式切换按钮的CSS
+  const darkModeCSS = `
+    .dark-mode-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      width: 48px;
+      height: 24px;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      background: #fff;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      padding: 2px;
+      transition: all 0.3s ease;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    
+    .dark-mode-toggle:hover {
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      border-color: #ccc;
+    }
+    
+    .dark-mode-toggle .toggle-icon {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: linear-gradient(45deg, #FFB800, #FFA000);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      transition: all 0.3s ease;
+      transform: translateX(0);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+      color: #fff;
+    }
+    
+    body.dark .dark-mode-toggle {
+      background: #333;
+      border-color: #555;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    }
+    
+    body.dark .dark-mode-toggle:hover {
+      border-color: #666;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    }
+    
+    body.dark .dark-mode-toggle .toggle-icon {
+      background: linear-gradient(45deg, #4FC3F7, #29B6F6);
+      transform: translateX(22px);
+    }
+    
+    /* NexT 变量驱动的暗黑/明亮模式覆盖（手动切换优先于系统） */
+    html[data-theme="dark"] {
+      --body-bg-color: #282828;
+      --content-bg-color: #2b2b2b;
+      --card-bg-color: #333333;
+      --text-color: #e0e0e0;
+      --blockquote-color: #bbbbbb;
+      --link-color: #9ecbff;
+      --link-hover-color: #cde4ff;
+      --brand-color: #dddddd;
+      --brand-hover-color: #ffffff;
+      --table-row-odd-bg-color: #2b2b2b;
+      --table-row-hover-bg-color: #363636;
+      --menu-item-bg-color: #333333;
+      --btn-default-bg: #222222;
+      --btn-default-color: #e0e0e0;
+      --btn-default-border-color: #444444;
+      --btn-default-hover-bg: #3a3a3a;
+      --btn-default-hover-color: #ffffff;
+      --btn-default-hover-border-color: #666666;
+    }
+
+    /* 强制明亮（覆盖系统暗色） */
+    html[data-theme="light"] {
+      --body-bg-color: #ffffff;
+      --content-bg-color: #ffffff;
+      --card-bg-color: #f5f5f5;
+      --text-color: #333333;
+      --blockquote-color: #666666;
+      --link-color: #222222;
+      --link-hover-color: #111111;
+      --brand-color: #000000;
+      --brand-hover-color: #ffffff;
+      --table-row-odd-bg-color: #f9f9f9;
+      --table-row-hover-bg-color: #f5f5f5;
+      --menu-item-bg-color: #f5f5f5;
+      --btn-default-bg: #111111;
+      --btn-default-color: #ffffff;
+      --btn-default-border-color: #111111;
+      --btn-default-hover-bg: #ffffff;
+      --btn-default-hover-color: #111111;
+      --btn-default-hover-border-color: #111111;
+    }
+
+    /* 暗黑模式样式 */
+    body.dark {
+      background-color: #1a1a1a;
+      color: #e0e0e0;
+    }
+    
+    body.dark .header {
+      background-color: #222;
+      border-bottom-color: #333;
+    }
+    
+    body.dark .site-meta {
+      color: #e0e0e0;
+    }
+    
+    body.dark .site-meta .site-title {
+      color: #fff;
+    }
+    
+    body.dark .site-nav {
+      background-color: #222;
+    }
+    
+    body.dark .menu .menu-item a {
+      color: #e0e0e0;
+    }
+    
+    body.dark .menu .menu-item a:hover {
+      color: #fff;
+    }
+    
+    body.dark .post {
+      background-color: #2d2d2d;
+      border-color: #404040;
+    }
+    
+    body.dark .post-title {
+      color: #fff;
+    }
+    
+    body.dark .post-title a {
+      color: #fff;
+    }
+    
+    body.dark .post-meta {
+      color: #aaa;
+    }
+    
+    body.dark .post-body {
+      color: #d0d0d0;
+    }
+    
+    body.dark .post-body h1,
+    body.dark .post-body h2,
+    body.dark .post-body h3,
+    body.dark .post-body h4,
+    body.dark .post-body h5,
+    body.dark .post-body h6 {
+      color: #fff;
+    }
+    
+    body.dark .sidebar {
+      background-color: #222;
+      border-color: #404040;
+    }
+    
+    body.dark .sidebar-inner {
+      background-color: #222;
+    }
+    
+    body.dark pre {
+      background-color: #1e1e1e;
+      color: #d0d0d0;
+      border-color: #404040;
+    }
+    
+    body.dark code {
+      background-color: #2d2d2d;
+      color: #f0f0f0;
+    }
+    
+    body.dark blockquote {
+      background-color: #2d2d2d;
+      border-left-color: #0070f3;
+      color: #d0d0d0;
+    }
+    
+    body.dark .pagination .page-number {
+      background-color: #2d2d2d;
+      color: #e0e0e0;
+      border-color: #404040;
+    }
+    
+    body.dark .pagination .page-number:hover {
+      background-color: #404040;
+    }
+    
+    body.dark .main-inner {
+      background-color: #1a1a1a;
+    }
+    
+    body.dark .content-wrap {
+      background-color: #1a1a1a;
+    }
+    
+    /* Chart.js 暗黑模式适配 */
+    body.dark canvas {
+      filter: brightness(0.9) contrast(1.1);
+    }
+    
+    @media (max-width: 768px) {
+      .dark-mode-toggle {
+        top: 10px;
+        right: 10px;
+        width: 40px;
+        height: 20px;
+        border-radius: 10px;
+      }
+      
+      .dark-mode-toggle .toggle-icon {
+        width: 16px;
+        height: 16px;
+        font-size: 9px;
+      }
+      
+      body.dark .dark-mode-toggle .toggle-icon {
+        transform: translateX(18px);
+      }
+    }
+  `;
+  
+  // 注入CSS
+  const style = document.createElement('style');
+  style.textContent = darkModeCSS;
+  document.head.appendChild(style);
+  
+  // 检测系统主题偏好
+  function getSystemTheme() {
+    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  }
+  
+  // 获取用户主题偏好（兼容旧键名）
+  function getUserTheme() {
+    const saved = localStorage.getItem('color-scheme') || localStorage.getItem('dark-mode');
+    if (saved === 'dark' || saved === 'light') return saved === 'dark';
+    if (saved !== null) return saved === 'true';
+    return getSystemTheme(); // 默认跟随系统
+  }
+  
+  // 应用主题（同步 html data-theme 与 body.dark，兼容自定义样式与 NexT 变量）
+  function applyTheme(isDark) {
+    document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
+    document.body.classList.toggle('dark', isDark);
+  }
+  
+  // 创建切换按钮
+  function createToggleButton() {
+    const button = document.createElement('button');
+    button.className = 'dark-mode-toggle';
+    button.title = '切换暗黑模式';
+    
+    const icon = document.createElement('div');
+    icon.className = 'toggle-icon';
+    icon.innerHTML = '☀';
+    button.appendChild(icon);
+    
+    // 初始化主题
+    const isDark = getUserTheme();
+    applyTheme(isDark);
+    updateIcon(icon, isDark);
+    
+    // 点击事件
+    button.addEventListener('click', function() {
+      const currentlyDark = document.body.classList.contains('dark');
+      const newDark = !currentlyDark;
+      
+      applyTheme(newDark);
+      updateIcon(icon, newDark);
+      
+      // 保存到本地存储（兼容旧键）
+      localStorage.setItem('color-scheme', newDark ? 'dark' : 'light');
+      localStorage.setItem('dark-mode', newDark);
+      
+      // 平滑动画
+      document.body.style.transition = 'background-color 0.3s ease, color 0.3s ease';
+      setTimeout(() => {
+        document.body.style.transition = '';
+      }, 300);
+    });
+    
+    document.body.appendChild(button);
+  }
+  
+  // 更新图标
+  function updateIcon(icon, isDark) {
+    if (isDark) {
+      icon.innerHTML = '🌙';
+    } else {
+      icon.innerHTML = '☀';
+    }
+  }
+  
+  // 监听系统主题变化（仅在未手动设置时跟随）
+  function watchSystemTheme() {
+    if (!window.matchMedia) return;
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    const handler = function(e) {
+      if (localStorage.getItem('color-scheme') === null && localStorage.getItem('dark-mode') === null) {
+        const isDark = e.matches;
+        const icon = document.querySelector('.toggle-icon');
+        applyTheme(isDark);
+        if (icon) updateIcon(icon, isDark);
+      }
+    };
+    if (mediaQuery.addEventListener) mediaQuery.addEventListener('change', handler);
+    else if (mediaQuery.addListener) mediaQuery.addListener(handler);
+  }
+  
+  // 页面加载完成后创建按钮
+  function init() {
+    createToggleButton();
+    watchSystemTheme();
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+  
+})();
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/exif-js@2.3.0/exif.min.js"></script>
+<script>
+(function() {
+  'use strict';
+
+  const captionClass = 'exif-caption';
+  const captionId = 'exif-caption-overlay';
+  const exifCache = new WeakMap();
+
+  function ensureCaptionStyle() {
+    if (document.getElementById('exif-caption-style')) return;
+    const style = document.createElement('style');
+    style.id = 'exif-caption-style';
+    style.textContent = `
+      .${captionClass} {
+        position: absolute;
+        z-index: 1001;
+        padding: 6px 10px;
+        border-radius: 6px;
+        font-size: 12px;
+        line-height: 1.4;
+        color: #fff;
+        background: rgba(0, 0, 0, 0.65);
+        max-width: 90vw;
+        box-sizing: border-box;
+        pointer-events: none;
+        text-shadow: 0 1px 2px rgba(0,0,0,0.4);
+      }
+      .exif-caption-inline {
+        margin-top: 6px;
+        font-size: 12px;
+        line-height: 1.4;
+        color: var(--text-color, #666);
+        text-align: left;
+        word-break: break-word;
+      }
+    `;
+    document.head.appendChild(style);
+  }
+
+  function formatExposure(value) {
+    if (value === undefined || value === null) return '';
+    if (typeof value === 'string') return value.includes('/') ? `${value}s` : value;
+    if (typeof value === 'number') {
+      if (value >= 1) return `${value}s`;
+      const denom = Math.round(1 / value);
+      return `1/${denom}s`;
+    }
+    return '';
+  }
+
+  function formatFNumber(value) {
+    if (value === undefined || value === null) return '';
+    if (typeof value === 'string') return value.toLowerCase().startsWith('f') ? value : `f/${value}`;
+    if (typeof value === 'number') return `f/${value}`;
+    return '';
+  }
+
+  function formatFocalLength(value) {
+    if (value === undefined || value === null) return '';
+    if (typeof value === 'string') return value.includes('mm') ? value : `${value}mm`;
+    if (typeof value === 'number') return `${value}mm`;
+    return '';
+  }
+
+  function normalizeTags(tags) {
+    const make = tags.Make || '';
+    const model = tags.Model || '';
+    const lens = tags.LensModel || tags.LensMake || '';
+    const exposure = formatExposure(tags.ExposureTime);
+    const fNumber = formatFNumber(tags.FNumber || tags.ApertureValue);
+    const iso = tags.ISOSpeedRatings || tags.ISO || '';
+    const focal = formatFocalLength(tags.FocalLength);
+    const date = tags.DateTimeOriginal || tags.DateTime || '';
+
+    const parts = [];
+    const camera = `${make} ${model}`.trim();
+    if (camera) parts.push(camera);
+    if (lens) parts.push(lens);
+    const settings = [exposure, fNumber, iso ? `ISO ${iso}` : '', focal].filter(Boolean).join(' · ');
+    if (settings) parts.push(settings);
+    if (date) parts.push(date);
+    return parts.length ? parts.join(' / ') : '无 EXIF 信息';
+  }
+
+  function getExifText(img, callback) {
+    if (exifCache.has(img)) {
+      callback(exifCache.get(img));
+      return;
+    }
+    if (!window.EXIF) {
+      callback('EXIF 库未加载');
+      return;
+    }
+    const run = function() {
+      window.EXIF.getData(img, function() {
+        const tags = window.EXIF.getAllTags(this) || {};
+        const text = normalizeTags(tags);
+        exifCache.set(img, text);
+        callback(text);
+      });
+    };
+    if (img.complete) run();
+    else img.addEventListener('load', run, { once: true });
+  }
+
+  function removeCaption() {
+    const caption = document.getElementById(captionId);
+    if (caption) caption.remove();
+  }
+
+  function placeCaption(text, target) {
+    removeCaption();
+    if (!target) return;
+    ensureCaptionStyle();
+    const rect = target.getBoundingClientRect();
+    const caption = document.createElement('div');
+    caption.id = captionId;
+    caption.className = captionClass;
+    caption.textContent = text;
+    caption.style.left = `${Math.max(12, rect.left + window.scrollX)}px`;
+    caption.style.top = `${rect.bottom + window.scrollY + 8}px`;
+    caption.style.maxWidth = `${Math.min(rect.width, window.innerWidth - 24)}px`;
+    document.body.appendChild(caption);
+  }
+
+  function setInlineCaption(img, text) {
+    if (!img || img.dataset.exifInlineDone) return;
+    img.dataset.exifInlineDone = 'true';
+    const figure = img.closest('figure');
+    if (figure) {
+      let figcaption = figure.querySelector('figcaption');
+      if (!figcaption) {
+        figcaption = document.createElement('figcaption');
+        figure.appendChild(figcaption);
+      }
+      figcaption.classList.add('exif-caption-inline');
+      figcaption.textContent = text;
+      return;
+    }
+    const caption = document.createElement('div');
+    caption.className = 'exif-caption-inline';
+    caption.textContent = text;
+    img.insertAdjacentElement('afterend', caption);
+  }
+
+  function findOpenedZoomImage() {
+    return document.querySelector('.medium-zoom-image--opened');
+  }
+
+  function initExifCaption() {
+    const inlineImages = document.querySelectorAll('.post-body img');
+    inlineImages.forEach(function(img) {
+      getExifText(img, function(text) {
+        if (!text || text === '无 EXIF 信息') return;
+        setInlineCaption(img, text);
+      });
+    });
+
+    document.addEventListener('click', function(event) {
+      const img = event.target.closest('.post-body img');
+      if (!img) return;
+
+      setTimeout(function() {
+        const zoomed = findOpenedZoomImage();
+        if (!zoomed) return;
+        getExifText(img, function(text) {
+          placeCaption(text, zoomed);
+        });
+      }, 80);
+    });
+
+    document.addEventListener('keyup', function(event) {
+      if (event.key === 'Escape') removeCaption();
+    });
+
+    document.addEventListener('click', function(event) {
+      if (!event.target || !event.target.classList) return;
+      if (event.target.classList.contains('medium-zoom-overlay') ||
+          event.target.classList.contains('medium-zoom-image--opened')) {
+        removeCaption();
+      }
+    });
+
+    const observer = new MutationObserver(function() {
+      if (!findOpenedZoomImage()) removeCaption();
+    });
+    observer.observe(document.body, { childList: true, subtree: true });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initExifCaption);
+  } else {
+    initExifCaption();
+  }
+})();
+</script>
+
+<script>
+(function() {
+  'use strict';
+
+  function ensureBannerStyle() {
+    if (document.getElementById('banner-carousel-style')) return;
+    const style = document.createElement('style');
+    style.id = 'banner-carousel-style';
+    style.textContent = `
+      .banner-carousel {
+        position: relative;
+        width: 100%;
+        height: clamp(280px, 55vw, 520px);
+        overflow: hidden;
+        border-radius: 12px;
+        background: #141414;
+        margin: 20px 0;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+      }
+      .banner-track {
+        display: flex;
+        height: 100%;
+        transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+        will-change: transform;
+        align-items: center;
+      }
+      .banner-slide {
+        flex: 0 0 62%;
+        height: 100%;
+        margin: 0 12px;
+        opacity: 0;
+        transform: scale(0.75);
+        transition: transform 0.45s ease, opacity 0.45s ease;
+        cursor: pointer;
+        pointer-events: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+        overflow: hidden;
+        position: relative;
+      }
+      .banner-slide.active {
+        opacity: 1;
+        transform: scale(1);
+        z-index: 10;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        pointer-events: auto;
+      }
+      .banner-slide.is-prev,
+      .banner-slide.is-next {
+        opacity: 0.55;
+        transform: scale(0.86);
+        pointer-events: auto;
+        z-index: 5;
+      }
+      .banner-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        background: #000;
+        transition: transform 0.5s ease;
+      }
+      .banner-prev,
+      .banner-next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(0,0,0,0.3);
+        color: #fff;
+        border: 1px solid rgba(255,255,255,0.2);
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        cursor: pointer;
+        z-index: 20;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        line-height: 1;
+        transition: all 0.3s ease;
+        backdrop-filter: blur(4px);
+      }
+      .banner-prev:hover,
+      .banner-next:hover {
+        background: rgba(0,0,0,0.6);
+        transform: translateY(-50%) scale(1.1);
+      }
+      .banner-prev { left: 20px; }
+      .banner-next { right: 20px; }
+      .banner-dots {
+        position: absolute;
+        left: 50%;
+        bottom: 15px;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 8px;
+        z-index: 20;
+      }
+      .banner-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: rgba(255,255,255,0.4);
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+      .banner-dot.active {
+        background: #fff;
+        transform: scale(1.2);
+        box-shadow: 0 0 8px rgba(255,255,255,0.5);
+      }
+      
+      @media (max-width: 768px) {
+        .banner-carousel {
+          height: clamp(220px, 70vw, 360px);
+        }
+        .banner-slide {
+          flex: 0 0 85%;
+          margin: 0 6px;
+        }
+        .banner-prev, .banner-next {
+          width: 32px;
+          height: 32px;
+          font-size: 18px;
+        }
+      }
+    `;
+    document.head.appendChild(style);
+  }
+
+  function initCarousel(carousel) {
+    const track = carousel.querySelector('.banner-track');
+    const slides = Array.from(carousel.querySelectorAll('.banner-slide'));
+    let prevBtn = carousel.querySelector('.banner-prev');
+    let nextBtn = carousel.querySelector('.banner-next');
+    let dotsWrap = carousel.querySelector('.banner-dots');
+    const autoplay = Number(carousel.dataset.autoplay || 0);
+    let index = 0;
+    let timer = null;
+
+    if (!track || slides.length === 0) return;
+
+    if (!prevBtn) {
+      prevBtn = document.createElement('button');
+      prevBtn.type = 'button';
+      prevBtn.className = 'banner-prev';
+      prevBtn.setAttribute('aria-label', 'Previous slide');
+      prevBtn.innerHTML = '&lsaquo;';
+      carousel.appendChild(prevBtn);
+    }
+
+    if (!nextBtn) {
+      nextBtn = document.createElement('button');
+      nextBtn.type = 'button';
+      nextBtn.className = 'banner-next';
+      nextBtn.setAttribute('aria-label', 'Next slide');
+      nextBtn.innerHTML = '&rsaquo;';
+      carousel.appendChild(nextBtn);
+    }
+
+    if (!dotsWrap) {
+      dotsWrap = document.createElement('div');
+      dotsWrap.className = 'banner-dots';
+      carousel.appendChild(dotsWrap);
+    }
+
+    dotsWrap.innerHTML = '';
+    const dots = slides.map(function(_, i) {
+      const dot = document.createElement('span');
+      dot.className = 'banner-dot' + (i === 0 ? ' active' : '');
+      dot.addEventListener('click', function() {
+        goTo(i);
+      });
+      dotsWrap.appendChild(dot);
+      return dot;
+    });
+
+    slides.forEach(function(slide, i) {
+      slide.addEventListener('click', function() {
+        if (index !== i) goTo(i);
+      });
+    });
+
+    function update() {
+      const containerWidth = carousel.offsetWidth;
+      const slide = slides[0];
+      const style = window.getComputedStyle(slide);
+      const slideWidth = slide.offsetWidth;
+      const margin = parseFloat(style.marginLeft) + parseFloat(style.marginRight);
+      const fullSlideWidth = slideWidth + margin;
+      const prevIndex = (index - 1 + slides.length) % slides.length;
+      const nextIndex = (index + 1) % slides.length;
+
+      const trackShift = (containerWidth / 2) - ((index * fullSlideWidth) + (fullSlideWidth / 2));
+      
+      track.style.transform = `translateX(${trackShift}px)`;
+
+      slides.forEach(function(s, i) {
+        s.classList.toggle('active', i === index);
+        s.classList.toggle('is-prev', i === prevIndex);
+        s.classList.toggle('is-next', i === nextIndex);
+      });
+      dots.forEach(function(d, i) {
+        d.classList.toggle('active', i === index);
+      });
+    }
+
+    function goTo(i) {
+      index = (i + slides.length) % slides.length;
+      update();
+    }
+
+    function next() {
+      goTo(index + 1);
+    }
+
+    function prev() {
+      goTo(index - 1);
+    }
+
+    if (nextBtn) nextBtn.addEventListener('click', next);
+    if (prevBtn) prevBtn.addEventListener('click', prev);
+
+    window.addEventListener('resize', function() {
+      requestAnimationFrame(update);
+    });
+
+    setTimeout(update, 50);
+
+    if (autoplay > 0) {
+      const start = function() {
+        timer = setInterval(next, autoplay);
+      };
+      const stop = function() {
+        if (timer) clearInterval(timer);
+        timer = null;
+      };
+      carousel.addEventListener('mouseenter', stop);
+      carousel.addEventListener('mouseleave', start);
+      start();
+    }
+  }
+
+  function initBannerCarousels() {
+    ensureBannerStyle();
+    document.querySelectorAll('.banner-carousel').forEach(initCarousel);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initBannerCarousels);
+  } else {
+    initBannerCarousels();
+  }
+})();
 </script>
 
 </body>
