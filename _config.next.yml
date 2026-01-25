@@ -2,6 +2,9 @@
 # NexT Theme 优化配置
 # ===============================================================
 
+custom_file_path:
+  bodyEnd: source/_data/body-end.swig
+
 # ---------------------------------------------------------------
 # Site Information Settings
 # ---------------------------------------------------------------
@@ -192,6 +195,9 @@ local_search:
   top_n_per_article: 1
   unescape: false
   preload: false
+
+# 图片点击放大
+mediumzoom: true
 
 # ---------------------------------------------------------------
 # Comments Settings
