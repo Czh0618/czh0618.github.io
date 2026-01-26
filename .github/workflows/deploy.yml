@@ -37,6 +37,13 @@ jobs:
             echo "ERROR: themes/next/_config.yml not found! Theme not loaded properly."
             exit 1
           fi
+          echo "=== Checking theme layout directory ==="
+          if [ ! -d "themes/next/layout" ]; then
+            echo "ERROR: themes/next/layout directory not found!"
+            exit 1
+          fi
+          echo "Layout files in theme:"
+          ls -la themes/next/layout/
           echo "Theme loaded successfully!"
         else
           echo "ERROR: themes/next directory not found!"
@@ -46,7 +53,7 @@ jobs:
     - name: Setup Node.js
       uses: actions/setup-node@v4
       with:
-        node-version: '18'
+        node-version: '24'
         cache: 'npm'
 
     - name: Install dependencies
