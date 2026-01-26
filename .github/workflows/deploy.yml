@@ -40,8 +40,21 @@ jobs:
         npm run clean
         npm run build
         
-    - name: List public files
-      run: ls -la public/
+    - name: Verify build output
+      run: |
+        echo "Checking if public directory exists and has content..."
+        ls -la public/
+        if [ ! -f "public/index.html" ]; then
+          echo "ERROR: index.html not found in public directory!"
+          exit 1
+        fi
+        echo "index.html size: $(wc -c < public/index.html) bytes"
+        if [ $(wc -c < public/index.html) -lt 1000 ]; then
+          echo "WARNING: index.html seems too small!"
+          cat public/index.html
+          exit 1
+        fi
+        echo "Build verification passed!"
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v4
@@ -50,4 +63,7 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./public
         publish_branch: master
-        force_orphan: true
+        force_orphan: false
+        user_name: 'github-actions[bot]'
+        user_email: 'github-actions[bot]@users.noreply.github.com'
+        commit_message: 'Deploy: ${{ github.event.head_commit.message }}'
