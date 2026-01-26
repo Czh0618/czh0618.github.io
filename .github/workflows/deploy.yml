@@ -25,6 +25,7 @@ jobs:
     - name: Update and verify submodules
       run: |
         echo "=== Initializing submodules ==="
+        git submodule sync --recursive
         git submodule update --init --recursive --force
         echo "=== Submodule status ==="
         git submodule status
@@ -44,6 +45,12 @@ jobs:
           fi
           echo "Layout files in theme:"
           ls -la themes/next/layout/
+          echo "=== Installing theme dependencies if needed ==="
+          if [ -f "themes/next/package.json" ]; then
+            cd themes/next
+            npm install --production
+            cd ../..
+          fi
           echo "Theme loaded successfully!"
         else
           echo "ERROR: themes/next directory not found!"
