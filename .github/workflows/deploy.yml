@@ -22,9 +22,26 @@ jobs:
         fetch-depth: 0
         token: ${{ secrets.GITHUB_TOKEN }}
         
-    - name: Update submodules
+    - name: Update and verify submodules
       run: |
+        echo "=== Initializing submodules ==="
         git submodule update --init --recursive --force
+        echo "=== Submodule status ==="
+        git submodule status
+        echo "=== Checking themes/next directory ==="
+        ls -la themes/
+        if [ -d "themes/next" ]; then
+          echo "themes/next exists, checking contents..."
+          ls -la themes/next/ | head -20
+          if [ ! -f "themes/next/_config.yml" ]; then
+            echo "ERROR: themes/next/_config.yml not found! Theme not loaded properly."
+            exit 1
+          fi
+          echo "Theme loaded successfully!"
+        else
+          echo "ERROR: themes/next directory not found!"
+          exit 1
+        fi
 
     - name: Setup Node.js
       uses: actions/setup-node@v4
@@ -37,8 +54,10 @@ jobs:
 
     - name: Clean and Build
       run: |
+        echo "=== Cleaning ==="
         npm run clean
-        npm run build
+        echo "=== Building with verbose output ==="
+        npx hexo generate --debug 2>&1 | tail -100
         
     - name: Verify build output
       run: |
