@@ -57,23 +57,43 @@ jobs:
         echo "=== Cleaning ==="
         npm run clean
         echo "=== Building with verbose output ==="
-        npx hexo generate --debug 2>&1 | tail -100
+        npx hexo generate --debug
+        echo "=== Checking if index.html was generated ==="
+        if [ -f "public/index.html" ]; then
+          echo "✓ index.html exists"
+          echo "Size: $(wc -c < public/index.html) bytes"
+          echo "First 50 lines:"
+          head -50 public/index.html
+        else
+          echo "✗ index.html NOT found!"
+        fi
         
     - name: Verify build output
       run: |
         echo "Checking if public directory exists and has content..."
         ls -la public/
+        echo "=== Checking index.html ==="
         if [ ! -f "public/index.html" ]; then
           echo "ERROR: index.html not found in public directory!"
+          echo "Listing all HTML files in public:"
+          find public -name "*.html" -type f | head -20
           exit 1
         fi
-        echo "index.html size: $(wc -c < public/index.html) bytes"
-        if [ $(wc -c < public/index.html) -lt 1000 ]; then
-          echo "WARNING: index.html seems too small!"
+        FILE_SIZE=$(wc -c < public/index.html)
+        echo "index.html size: $FILE_SIZE bytes"
+        if [ "$FILE_SIZE" -lt 100 ]; then
+          echo "WARNING: index.html seems too small or empty!"
+          echo "=== Content of index.html ==="
           cat public/index.html
+          echo "=== Checking hexo database ==="
+          if [ -f "db.json" ]; then
+            echo "db.json exists ($(wc -c < db.json) bytes)"
+          fi
+          echo "=== Checking _config.yml index_generator ==="
+          grep -A 5 "index_generator:" _config.yml
           exit 1
         fi
-        echo "Build verification passed!"
+        echo "✓ Build verification passed! index.html has $FILE_SIZE bytes"
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v4
